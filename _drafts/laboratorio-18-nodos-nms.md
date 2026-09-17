@@ -14,7 +14,7 @@ Necesitaba tres cosas que un laboratorio de juguete no da: suficiente variedad d
 
 ## Cómo lo hice
 
-El parque está montado con routers FRR sobre contenedores, con el direccionamiento y las sesiones definidos en fichero, de forma que el laboratorio se levanta entero con un comando y no "a mano". Eso es lo que lo hace repetible: si algo salgo mal, se tira y se vuelve a levantar igual.
+El parque está montado con routers FRR sobre contenedores, con el direccionamiento y las sesiones definidos en fichero, de forma que el laboratorio se levanta entero con un comando y no "a mano". Eso es lo que lo hace repetible: si algo sale mal, se tira y se vuelve a levantar igual.
 
 El NMS hace polling periódico y recibe traps. Para dejar constancia de lo que pasa en el cable, capturo el tráfico del plano de gestión:
 
