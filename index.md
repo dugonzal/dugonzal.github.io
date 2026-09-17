@@ -1,7 +1,9 @@
 ---
 layout: page
+lang: es
 title: Inicio
 permalink: /
+alt: /en/
 description: Duvan M. González Escobar — backend Java en producción 24/7, redes y bajo nivel. Cada afirmación con su prueba.
 ---
 

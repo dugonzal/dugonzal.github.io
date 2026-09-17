@@ -1,7 +1,9 @@
 ---
 layout: page
+lang: es
 title: Pruebas
 permalink: /pruebas/
+alt: /en/pruebas/
 description: Cada afirmación de este perfil con la evidencia que la sostiene — números medidos, repositorios y qué se puede y no se puede enseñar.
 ---
 

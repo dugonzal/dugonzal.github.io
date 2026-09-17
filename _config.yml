@@ -1,5 +1,6 @@
 title: Duvan M. González Escobar
 tagline: Ingeniero de software — backend Java en producción 24/7, redes y bajo nivel
+tagline_en: Software engineer — Java backend in 24/7 production, networks and low level
 description: Backend Java sobre sistemas de misión crítica 24/7, redes y telecomunicaciones (SNMP, MPLS), y bajo nivel en C y ensamblador. Cada afirmación con su prueba.
 email: dugonzal@protonmail.com
 github_username: dugonzal
@@ -12,6 +13,7 @@ timezone: Europe/Madrid
 future: false
 permalink: /blog/:title/
 meses: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+months: [January, February, March, April, May, June, July, August, September, October, November, December]
 defaults:
   - scope: {path: "", type: posts}
     values: {layout: post}

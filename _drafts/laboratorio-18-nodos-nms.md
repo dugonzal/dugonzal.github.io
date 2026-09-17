@@ -1,5 +1,6 @@
 ---
 layout: post
+lang: es
 title: Un laboratorio de 18 nodos con NMS en vivo, levantado en una llamada
 date: 2026-09-17 10:00:00 +0200
 description: Parque de 18 nodos con OSPF y MPLS/LDP y un NMS haciendo polling en vivo. Qué medí, con qué y qué me llevé.

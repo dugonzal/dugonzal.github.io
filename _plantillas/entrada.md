@@ -3,11 +3,18 @@
 # Para publicar: copia este fichero a _posts/ con el nombre  AAAA-MM-DD-slug.md
 #   y borra los comentarios que no uses. La fecha manda: sin fecha en el nombre, no se publica.
 layout: post
+lang: es
 title: Título de la entrada
 date: 2026-01-01 10:00:00 +0200
 description: Una frase de resumen (es la que sale en el índice, en el feed y en Google).
 tags: [redes, snmp]
 ---
+
+<!-- IDIOMAS: `lang: es` o `lang: en`. La entrada en inglés lleva además
+     `permalink: /en/blog/slug/` (si no, caería en /blog/ y se mezclarían los idiomas),
+     y las dos versiones se enlazan entre sí con la misma clave `ref: slug-comun`
+     y un `alt:` apuntando a la gemela. La entrada inglesa también lleva `title` y
+     `description` en inglés: son los que salen en el feed y en Google. -->
 
 <!-- REGLAS DE LA CASA (borrar al publicar):
      1. Primera persona y hechos. Nada de "apasionado" ni "experto".

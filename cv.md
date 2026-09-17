@@ -1,7 +1,9 @@
 ---
 layout: page
+lang: es
 title: CV
 permalink: /cv/
+alt: /en/cv/
 description: CV de Duvan M. González Escobar — backend Java en producción 24/7, redes y telecomunicaciones, bajo nivel en C y ensamblador.
 ---
 <h1>Duvan Mauricio González Escobar</h1>

@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /en/feed.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title }} — English</title>
+  <subtitle>{{ site.tagline_en }}</subtitle>
+  <link rel="alternate" href="{{ site.url }}/en/"/>
+  <link rel="self" href="{{ site.url }}/en/feed.xml"/>
+  <id>{{ site.url }}/en/</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author><name>{{ site.author }}</name><email>{{ site.email }}</email></author>
+{% assign en_posts = site.posts | where_exp: "p", "p.lang == 'en'" %}
+{% for post in en_posts limit: 20 %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <id>{{ site.url }}{{ post.url }}</id>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <summary>{{ post.description | default: post.excerpt | strip_html | truncatewords: 45 | xml_escape }}</summary>
+  </entry>
+{% endfor %}
+</feed>
