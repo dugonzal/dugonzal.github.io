@@ -57,7 +57,7 @@
     <a href="mailto:{{ site.email }}">{{ site.email }}</a> ·
     <a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a>
   </p>
-  <p class="muted">{{ site.location }}</p>
+  <p class="muted">{% if lang == "en" %}{{ site.location_en }}{% else %}{{ site.location }}{% endif %}</p>
 </footer>
 
 </body>

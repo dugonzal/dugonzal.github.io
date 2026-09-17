@@ -8,7 +8,7 @@ tagline: Software engineer — Java backend in 24/7 production, networks and low
 description: CV of Duvan M. González Escobar — Java backend in 24/7 production, networks and telecommunications, low level in C and assembly.
 ---
 <h1>Duvan Mauricio González Escobar</h1>
-<div class="row"><span class="place">Software Engineer · Java Backend · 24/7 Critical Systems · {{ site.location }}</span></div>
+<div class="row"><span class="place">Software Engineer · Java Backend · 24/7 Critical Systems · {{ site.location_en }}</span></div>
 <div class="row"><span class="place"><a href="mailto:{{ site.email }}">{{ site.email }}</a> · <a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a></span></div>
 
 <h2>Profile</h2>
