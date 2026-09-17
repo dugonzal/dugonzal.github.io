@@ -1,0 +1,15 @@
+title: Duvan M. González Escobar
+tagline: Ingeniero de software — backend Java en producción 24/7, redes y bajo nivel
+description: Backend Java sobre sistemas de misión crítica 24/7, redes y telecomunicaciones (SNMP, MPLS), y bajo nivel en C y ensamblador. Cada afirmación con su prueba.
+email: dugonzal@protonmail.com
+github_username: dugonzal
+location: Santander, Cantabria · Remoto (España)
+url: "https://dugonzal.github.io"
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+plugins: []
+exclude: [README.md, Gemfile, Gemfile.lock, vendor]

@@ -1,0 +1,93 @@
+/* Duvan M. González Escobar — dugonzal.github.io
+   Paleta y tipografía compartidas con el CV en PDF (Source Sans 3 autoalojada). */
+
+@font-face{font-family:'Source Sans 3';src:url('/assets/fonts/SourceSans3-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url('/assets/fonts/SourceSans3-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url('/assets/fonts/SourceSans3-Italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+
+:root{
+  --accent:#1b4f72;
+  --accent-soft:#eaf1f6;
+  --ink:#1b1b1b;
+  --gray:#555;
+  --rule:#d8d8d8;
+  --width:740px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:#fff;color:var(--ink);
+  font-family:'Source Sans 3','Noto Sans',Cantarell,system-ui,Arial,sans-serif;
+  font-size:17px;line-height:1.55;
+}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(27,79,114,.35)}
+a:hover{border-bottom-color:var(--accent)}
+
+/* --- cabecera y pie --- */
+header.site,footer.site,main{max-width:var(--width);margin:0 auto;padding:0 22px}
+header.site{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;
+  padding-top:26px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.brand{display:flex;flex-direction:column;border:0}
+.brand .name{font-size:20px;font-weight:700;letter-spacing:.1px}
+.brand h1.name{margin:0;line-height:1.2;color:var(--ink)}
+.brand .tagline{font-size:13.5px;color:var(--gray);letter-spacing:.3px;text-transform:uppercase;margin-top:2px}
+nav a{margin-left:18px;font-size:15px;color:var(--gray);border:0}
+nav a:hover{color:var(--accent)}
+nav a.active{color:var(--accent);font-weight:700;border-bottom:2px solid var(--accent);padding-bottom:2px}
+
+main{padding-top:26px;padding-bottom:40px}
+footer.site{border-top:1px solid var(--rule);padding-top:16px;padding-bottom:30px;font-size:14.5px;color:var(--gray)}
+footer.site p{margin:0 0 4px}
+
+/* --- tipografía de contenido --- */
+h1{font-size:27px;line-height:1.25;margin:0 0 14px;letter-spacing:-.2px}
+h2{font-size:14.5px;text-transform:uppercase;letter-spacing:1.1px;color:var(--accent);
+   margin:34px 0 12px;padding-bottom:4px;border-bottom:1px solid var(--rule)}
+h3{font-size:17.5px;margin:22px 0 6px}
+p{margin:0 0 13px}
+.page>p,.page>.lead{max-width:66ch}
+.lead{font-size:19px;line-height:1.5}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin:6px 0}
+li::marker{color:var(--accent)}
+b,strong{font-weight:700}
+.muted{color:var(--gray)}
+code{font-family:ui-monospace,'JetBrains Mono',monospace;font-size:14.5px;
+     background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+
+/* --- bloques --- */
+.cards{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.cards{grid-template-columns:1fr 1fr 1fr}}
+.card{border:1px solid var(--rule);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column}
+.card h3{margin:0 0 6px;font-size:16px;color:var(--accent)}
+.card p{font-size:15px;margin:0 0 10px;color:var(--ink)}
+.card a{font-size:14.5px;margin-top:auto}
+
+.case{border-left:3px solid var(--accent);padding:2px 0 2px 16px;margin:26px 0 0}
+.case h3{margin-top:0}
+.case .where{font-size:14.5px;color:var(--gray);font-style:italic}
+
+/* --- experiencia (CV) --- */
+.row{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:space-between;align-items:baseline}
+.org{font-weight:700;font-size:17.5px}
+.sub{font-weight:700}
+.meta{color:var(--gray);font-size:14.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.place{color:var(--gray);font-size:14.5px;font-style:italic;width:100%}
+.entry{margin-top:20px}
+.entry.indent{padding-left:14px;border-left:1px solid var(--rule)}
+dl.skills{margin:0;display:grid;grid-template-columns:max-content 1fr;column-gap:14px;row-gap:6px}
+dl.skills dt{font-weight:700;white-space:nowrap}
+dl.skills dd{margin:0}
+@media(max-width:560px){dl.skills{grid-template-columns:1fr;row-gap:2px}dl.skills dd{margin-bottom:8px}}
+
+/* --- impresión: la página del CV sale como hoja limpia --- */
+@media print{
+  @page{size:A4;margin:12mm 14mm}
+  header.site,nav,footer.site{display:none}
+  body{font-size:10pt;line-height:1.35}
+  main{padding:0}
+  h2{margin:14px 0 6px}
+  .entry{margin-top:11px}
+  a{color:var(--ink);border:0}
+}
