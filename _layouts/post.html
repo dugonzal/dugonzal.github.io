@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<article class="post">
+  <h1>{{ page.title }}</h1>
+{% assign idx = page.date | date: "%-m" | minus: 1 %}
+  <p class="meta">{{ page.date | date: "%-d" }} de {{ site.meses[idx] }} de {{ page.date | date: "%Y" }}{% if page.tags %} · {{ page.tags | join: " · " }}{% endif %}</p>
+  {{ content }}
+  <hr class="sep">
+  <p class="meta"><a href="{{ '/blog/' | relative_url }}">← Todas las entradas</a></p>
+</article>

@@ -7,6 +7,15 @@ location: Santander, Cantabria · Remoto (España)
 url: "https://dugonzal.github.io"
 baseurl: ""
 
+# --- blog ---
+timezone: Europe/Madrid
+future: false
+permalink: /blog/:title/
+meses: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+defaults:
+  - scope: {path: "", type: posts}
+    values: {layout: post}
+
 markdown: kramdown
 kramdown:
   input: GFM
