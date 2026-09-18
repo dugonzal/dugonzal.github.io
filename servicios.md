@@ -46,10 +46,19 @@ description: Montaje de observabilidad end-to-end en tu stack en aproximadamente
 <p>La observabilidad es por donde se entra, porque es lo que más se pide. Estas son las otras tres, y van por el mismo proceso y las mismas condiciones:</p>
 
 <ul>
-  <li><b>Plataforma y Kubernetes.</b> Clúster reproducible de verdad —con la infraestructura como código, GitOps, red cerrada por defecto, identidad, secretos y registro de imágenes— y un entorno de pruebas que se levanta igual que producción. Presupuesto según alcance: de dos a seis semanas. No toco el código de tus aplicaciones.</li>
+  <li><b>Plataforma y Kubernetes.</b> Clúster reproducible de verdad —con la infraestructura como código, GitOps, red cerrada por defecto, identidad, secretos y registro de imágenes— y un entorno de pruebas que se levanta igual que producción. No toco el código de tus aplicaciones.</li>
   <li><b>Guardia y mantenimiento.</b> Si ya tienes el sistema montado y no hay nadie que lo mire los fines de semana: <b>1.500–2.000 €/mes</b> en producción, <b>2.500–4.000 €/mes</b> con SLA y tiempos de respuesta escritos. Mínimo tres meses, porque los umbrales se afinan con datos.</li>
   <li><b>Backend Go o Java, por sprint.</b> Un vertical concreto con fecha de entrega: API, persistencia, pruebas y despliegue, con las cifras de lo que aguanta. Presupuesto cerrado antes de empezar.</li>
 </ul>
+
+<p>La plataforma va en tres niveles, con <b>los mismos importes que la escalera de arriba</b>: se entra pequeño y se sube cuando hace falta.</p>
+
+<table>
+  <tr><th>Nivel</th><th>Para qué</th><th>Precio</th></tr>
+  <tr><td><b>1 · k3d</b> — Kubernetes en local</td><td>Que cada persona del equipo levante lo mismo que producción en su máquina</td><td><b>2.000 €</b></td></tr>
+  <tr><td><b>2 · k3s</b> — producción mínima (ARM)</td><td>Producción de verdad con coste bajo: servidor a ~19 €/mes y 0 € de licencias</td><td><b>3.500 € + 1.500–2.000 €/mes</b></td></tr>
+  <tr><td><b>3 · Talos</b> — plataforma crítica</td><td>Inmutable, sin SSH, actualizaciones atómicas, firewall cerrado por defecto</td><td><b>5.000 €+ + 2.500–4.000 €/mes</b></td></tr>
+</table>
 
 <p>Y si tu mundo es la <b>industria o la energía</b> (SCADA, IEC 104, IEC 61850, NIS2), el camino empieza por un assessment medido sobre tus equipos: los huecos por escrito en orden de riesgo y un plan por fases. Se presupuesta aparte.</p>
 

@@ -47,10 +47,19 @@ description: End-to-end observability installed on your stack in about a week �
 <p>Observability is the way in, because it is what gets asked for most. These are the other three, and they run through the same process and the same terms:</p>
 
 <ul>
-  <li><b>Platform and Kubernetes.</b> A genuinely reproducible cluster — infrastructure as code, GitOps, network closed by default, identity, secrets, image registry — plus a test environment that comes up the same way production does. Priced by scope: two to six weeks. I don't touch your applications' code.</li>
+  <li><b>Platform and Kubernetes.</b> A genuinely reproducible cluster — infrastructure as code, GitOps, network closed by default, identity, secrets, image registry — plus a test environment that comes up the same way production does. I don't touch your applications' code.</li>
   <li><b>On-call and maintenance.</b> If the system is already up and nobody watches it at weekends: <b>€1,500–2,000/month</b> in production, <b>€2,500–4,000/month</b> with a written SLA and response times. Three-month minimum, because thresholds get tuned with data.</li>
   <li><b>Backend in Go or Java, by sprint.</b> One vertical with a delivery date: API, persistence, tests and deployment, with the numbers of what it holds. Fixed price before starting.</li>
 </ul>
+
+<p>Platform comes in three levels, with <b>the same amounts as the ladder above</b>: you start small and move up when you need to.</p>
+
+<table>
+  <tr><th>Level</th><th>What it is for</th><th>Price</th></tr>
+  <tr><td><b>1 · k3d</b> — Kubernetes locally</td><td>So everyone on the team brings up the same thing production runs</td><td><b>€2,000</b></td></tr>
+  <tr><td><b>2 · k3s</b> — minimal production (ARM)</td><td>Real production at low cost: a server at ~€19/month and €0 in licences</td><td><b>€3,500 + €1,500–2,000/month</b></td></tr>
+  <tr><td><b>3 · Talos</b> — critical platform</td><td>Immutable, no SSH, atomic upgrades, firewall closed by default</td><td><b>€5,000+ + €2,500–4,000/month</b></td></tr>
+</table>
 
 <p>And if your world is <b>industry or energy</b> (SCADA, IEC 104, IEC 61850, NIS2), the way in starts with an assessment measured on your own equipment: the gaps in writing, ordered by risk, and a phased plan. Quoted separately.</p>
 
