@@ -44,8 +44,8 @@ description: CV de Duvan M. González Escobar — backend Java en producción 24
 
 <ul>
   <li><b>SnmpLab</b> (C#/.NET · repositorio privado, disponible bajo petición): driver <b>SNMP v1/v2/v3 (USM)</b> propio y simulador de red. <b>120.000 polls con 0 fallos a ~38.300 req/s</b>, interoperabilidad con net-snmp y <b>207 pruebas automatizadas en verde</b>.</li>
-  <li><b>Laboratorio de red de 18 nodos</b> (OSPF, MPLS/LDP) con NMS en vivo: <b>26.814 paquetes SNMP capturados en 15 s</b>, decodificados con tcpdump/tshark.</li>
-  <li><b>woody_woodpacker</b> (público: <a href="https://github.com/dugonzal/woody-woodpacker">github.com/dugonzal/woody-woodpacker</a>): packer ELF64 en C + asm x86-64 con ChaCha20 y soporte PIE/ASLR; verificado con gdb/objdump/strace.</li>
+  <li><b>Laboratorio de red de 18 nodos</b> (OSPF, MPLS/LDP) con NMS en vivo: <b>237 comprobaciones con 0 fallos (18/18 dispositivos, 22/22 enlaces)</b> verificadas por protocolo y capturas decodificadas con tcpdump/tshark.</li>
+  <li><b>woody_woodpacker</b> (público, <b>en pareja</b> con Aingeru Álvarez: <a href="https://github.com/AingeruAlvarezSanchez/woody-woodpacker">repo del proyecto</a> · <a href="https://github.com/dugonzal/woody-woodpacker">mi fork</a>): packer ELF64 en C + asm x86-64 con ChaCha20 y soporte PIE/ASLR. Mi parte: el stub autodescifrante, el keystream ChaCha20 y el descifrado de <code>.text</code> en runtime; verificado con gdb/objdump/strace.</li>
 </ul>
 
 <p>El detalle de cada demostración, con la evidencia que la sostiene, está en <a href="{{ '/pruebas/' | relative_url }}">Pruebas</a>.</p>

@@ -25,7 +25,7 @@ description: Cada afirmación de este perfil con la evidencia que la sostiene �
 <h3>2 · Monté un laboratorio de red de 18 nodos y lo medí</h3>
 <p>Parque de 18 nodos con OSPF y MPLS/LDP y un NMS en vivo, levantado de cero en cada prueba. No es un diagrama: es una red que arranca y responde.</p>
 <ul>
-  <li><b>Demostrado con:</b> <b>26.814 paquetes SNMP capturados en 15 s</b> (5,9 MB), decodificados con tcpdump y tshark, y <b>13 informes de etapa</b> con sus resultados de pruebas, incluidos los ciclos completos sin fallos.</li>
+  <li><b>Demostrado con:</b> <b>237 comprobaciones automáticas con 0 fallos: 18/18 dispositivos y 22/22 enlaces verificados por protocolo</b>, más <b>13 informes de etapa</b> con sus capturas decodificadas con tcpdump y tshark (informe de la etapa 11, 14-sep-2026).</li>
   <li><b>Detalle fino:</b> SNMPv3 authPriv sobre el laboratorio — identidad visible, carga útil cifrada, verificable en la captura.</li>
 </ul>
 <p class="where">Repositorio privado — se abre bajo petición para un proceso de selección.</p>
@@ -45,7 +45,7 @@ description: Cada afirmación de este perfil con la evidencia que la sostiene �
 <p>Herramienta que cifra el segmento del entrypoint de un binario ELF64 y le inyecta un stub autodescifrante en x86-64, manteniendo PIE/ASLR. El resultado ejecuta igual que el original, con el código cifrado en disco.</p>
 <ul>
   <li><b>Demostrado con:</b> repositorio público con el código y las pruebas, más la verificación en ejecución con readelf, objdump, gdb y strace.</li>
-  <li><b>Repo:</b> <a href="https://github.com/dugonzal/woody-woodpacker">github.com/dugonzal/woody-woodpacker</a>.</li>
+  <li><b>Proyecto en pareja</b> (42) con Aingeru Álvarez: el repo del proyecto es <a href="https://github.com/AingeruAlvarezSanchez/woody-woodpacker">AingeruAlvarezSanchez/woody-woodpacker</a> y el mío su fork (<a href="https://github.com/dugonzal/woody-woodpacker">dugonzal/woody-woodpacker</a>). Mi parte: el stub autodescifrante, el keystream ChaCha20 y el descifrado de <code>.text</code> en tiempo de ejecución.</li>
 </ul>
 </div>
 

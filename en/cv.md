@@ -45,8 +45,8 @@ description: CV of Duvan M. González Escobar — Java backend in 24/7 productio
 
 <ul>
   <li><b>SnmpLab</b> (C#/.NET · private repository, available on request): my own <b>SNMP v1/v2/v3 (USM)</b> driver and network simulator. <b>120,000 polls with 0 failures at ~38,300 req/s</b>, interoperability with net-snmp and <b>207 automated tests passing</b>.</li>
-  <li><b>18-node network lab</b> (OSPF, MPLS/LDP) with a live NMS: <b>26,814 SNMP packets captured in 15 s</b>, decoded with tcpdump/tshark.</li>
-  <li><b>woody_woodpacker</b> (public: <a href="https://github.com/dugonzal/woody-woodpacker">github.com/dugonzal/woody-woodpacker</a>): ELF64 packer in C + x86-64 assembly with ChaCha20 and PIE/ASLR support; verified with gdb/objdump/strace.</li>
+  <li><b>18-node network lab</b> (OSPF, MPLS/LDP) with a live NMS: <b>237 checks with 0 failures (18/18 devices, 22/22 links)</b> verified at the protocol level and captures decoded with tcpdump/tshark.</li>
+  <li><b>woody_woodpacker</b> (public, <b>joint project</b> with Aingeru Álvarez: <a href="https://github.com/AingeruAlvarezSanchez/woody-woodpacker">project repo</a> · <a href="https://github.com/dugonzal/woody-woodpacker">my fork</a>): ELF64 packer in C + x86-64 assembly with ChaCha20 and PIE/ASLR support. My part: the self-decrypting stub, the ChaCha20 keystream and the runtime <code>.text</code> decryption; verified with gdb/objdump/strace.</li>
 </ul>
 
 <p>The detail of each demo, with the evidence behind it, is on the <a href="{{ '/en/pruebas/' | relative_url }}">Evidence</a> page.</p>

@@ -26,7 +26,7 @@ description: Every claim on this profile with the evidence that backs it — mea
 <h3>2 · I built an 18-node network lab and measured it</h3>
 <p>An 18-node setup with OSPF and MPLS/LDP plus a live NMS, brought up from scratch on every run. It is not a diagram: it is a network that starts and answers.</p>
 <ul>
-  <li><b>Backed by:</b> <b>26,814 SNMP packets captured in 15 s</b> (5.9 MB), decoded with tcpdump and tshark, and <b>13 stage reports</b> with their test results, including complete failure-free cycles.</li>
+  <li><b>Backed by:</b> <b>237 automated checks with 0 failures: 18/18 devices and 22/22 links verified at the protocol level</b>, plus <b>13 stage reports</b> with their captures decoded with tcpdump and tshark (stage 11 report, 14 Sep 2026).</li>
   <li><b>Fine detail:</b> SNMPv3 authPriv over the lab — visible identity, encrypted payload, verifiable in the capture.</li>
 </ul>
 <p class="where">Private repository — opened on request for a hiring process.</p>
@@ -46,7 +46,7 @@ description: Every claim on this profile with the evidence that backs it — mea
 <p>A tool that encrypts the entrypoint segment of an ELF64 binary and injects a self-decrypting x86-64 stub, keeping PIE/ASLR intact. The result runs exactly like the original, with the code encrypted on disk.</p>
 <ul>
   <li><b>Backed by:</b> public repository with the code and the tests, plus runtime verification with readelf, objdump, gdb and strace.</li>
-  <li><b>Repo:</b> <a href="https://github.com/dugonzal/woody-woodpacker">github.com/dugonzal/woody-woodpacker</a>.</li>
+  <li><b>Joint project</b> (42) with Aingeru Álvarez: the project repo is <a href="https://github.com/AingeruAlvarezSanchez/woody-woodpacker">AingeruAlvarezSanchez/woody-woodpacker</a> and mine is the fork (<a href="https://github.com/dugonzal/woody-woodpacker">dugonzal/woody-woodpacker</a>). My part: the self-decrypting stub, the ChaCha20 keystream and the runtime <code>.text</code> decryption.</li>
 </ul>
 </div>
 
