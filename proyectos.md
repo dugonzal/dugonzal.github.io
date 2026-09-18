@@ -18,6 +18,7 @@ description: Los proyectos de Duvan M. González Escobar — repositorios públi
 <p>El sistema de gestión de red y el driver SNMP que lo alimenta, desarrollado y medido sobre un parque de laboratorio propio de 18 nodos. El repositorio no contiene el producto: contiene lo que su licencia declara abierto — los contratos de cable entre agente y gestor, los códecs de telemetría (C37.118, IEC 104) y la puerta de licencia, ejecutable — más la evidencia de lo medido.</p>
 <ul>
   <li><b>Repo:</b> <a href="https://github.com/dugonzal/cliente-0">github.com/dugonzal/cliente-0</a></li>
+  <li><b>El laboratorio donde se midió:</b> <a href="https://github.com/dugonzal/mpls-lab">github.com/dugonzal/mpls-lab</a> — 18 nodos FRR con OSPF y MPLS/LDP, 17 bancos y el verificador independiente de cada uno, en abierto.</li>
   <li><b>Dentro:</b> <code>open-reference/contracts/</code> (MIT) · <code>open-reference/stub/</code> · <code>evidence/</code> con los resultados · <code>docs/</code> con la serie de artículos.</li>
 </ul>
 </div>

@@ -18,6 +18,7 @@ description: Duvan M. González Escobar's projects — public repositories with 
 <p>The network management system and the SNMP driver feeding it, developed and measured on my own 18-node lab. The repository does not contain the product: it contains what its licence declares open — the wire contracts between agent and manager, the telemetry codecs (C37.118, IEC 104) and the licence gate, executable — plus the evidence of what was measured.</p>
 <ul>
   <li><b>Repo:</b> <a href="https://github.com/dugonzal/cliente-0">github.com/dugonzal/cliente-0</a></li>
+  <li><b>The lab it was measured on:</b> <a href="https://github.com/dugonzal/mpls-lab">github.com/dugonzal/mpls-lab</a> — 18 FRR nodes running OSPF and MPLS/LDP, 17 test benches and each one's independent verifier, in the open.</li>
   <li><b>Inside:</b> <code>open-reference/contracts/</code> (MIT) · <code>open-reference/stub/</code> · <code>evidence/</code> with the results · <code>docs/</code> with the article series.</li>
 </ul>
 </div>
