@@ -11,6 +11,8 @@ description: Los proyectos de Duvan M. González Escobar — repositorios públi
 
 <p class="lead">Público lo que puedo enseñar y de lo que no, doy la evidencia y la puerta abierta. Ninguna entrada de esta página es un diagrama: cada una tiene código, o medida, o las dos cosas.</p>
 
+<p><b>¿Buscas a alguien que te lo monte?</b> Monto la observabilidad de un sistema en aproximadamente una semana. <a href="{{ '/servicios/' | relative_url }}">Qué hago, qué cuesta y cómo es la semana →</a></p>
+
 <div class="case" id="cliente-0">
 <h3>1 · Cliente 0 — NMS/FCAPS y driver SNMP, en abierto</h3>
 <p>El sistema de gestión de red y el driver SNMP que lo alimenta, desarrollado y medido sobre un parque de laboratorio propio de 18 nodos. El repositorio no contiene el producto: contiene lo que su licencia declara abierto — los contratos de cable entre agente y gestor, los códecs de telemetría (C37.118, IEC 104) y la puerta de licencia, ejecutable — más la evidencia de lo medido.</p>

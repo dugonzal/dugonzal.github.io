@@ -11,6 +11,8 @@ description: Duvan M. González Escobar's projects — public repositories with 
 
 <p class="lead">I publish what I can show, and for what I cannot I give the evidence and an open door. No entry on this page is a diagram: each one has code, or a measurement, or both.</p>
 
+<p><b>Looking for someone to install it?</b> I install a system's observability in about a week. <a href="{{ '/en/services/' | relative_url }}">What I do, what it costs and how the week goes →</a></p>
+
 <div class="case" id="cliente-0">
 <h3>1 · Cliente 0 — NMS/FCAPS and SNMP driver, in the open</h3>
 <p>The network management system and the SNMP driver feeding it, developed and measured on my own 18-node lab. The repository does not contain the product: it contains what its licence declares open — the wire contracts between agent and manager, the telemetry codecs (C37.118, IEC 104) and the licence gate, executable — plus the evidence of what was measured.</p>

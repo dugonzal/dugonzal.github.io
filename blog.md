@@ -11,6 +11,8 @@ description: Entradas técnicas de Duvan M. González Escobar — sistemas en pr
 
 <p class="lead">Escribo de lo que toco de verdad: sistemas en producción, redes y telecomunicaciones, y bajo nivel. Cada entrada lleva sus cifras y sus comandos para que puedas repetirla.</p>
 
+<p><b>¿Buscas a alguien que te lo monte?</b> Monto la observabilidad de un sistema en aproximadamente una semana. <a href="{{ '/servicios/' | relative_url }}">Qué hago, qué cuesta y cómo es la semana →</a></p>
+
 {% assign es_posts = site.posts | where_exp: "p", "p.lang != 'en'" %}
 {% if es_posts.size == 0 %}
 <p class="muted">Todavía no hay entradas publicadas. La primera está en el horno.</p>

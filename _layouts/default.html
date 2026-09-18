@@ -1,14 +1,14 @@
 <!doctype html>
 {%- assign lang = page.lang | default: "es" -%}
 {%- if lang == "en" -%}
-{%- assign home_url = "/en/" -%}{%- assign cv_url = "/en/cv/" -%}{%- assign proj_url = "/en/projects/" -%}{%- assign ev_url = "/en/pruebas/" -%}{%- assign blog_url = "/en/blog/" -%}
-{%- assign nav_home = "Home" -%}{%- assign nav_proj = "Projects" -%}{%- assign nav_ev = "Evidence" -%}
+{%- assign home_url = "/en/" -%}{%- assign cv_url = "/en/cv/" -%}{%- assign proj_url = "/en/projects/" -%}{%- assign ev_url = "/en/pruebas/" -%}{%- assign blog_url = "/en/blog/" -%}{%- assign serv_url = "/en/services/" -%}
+{%- assign nav_home = "Home" -%}{%- assign nav_proj = "Projects" -%}{%- assign nav_ev = "Evidence" -%}{%- assign nav_serv = "Services" -%}
 {%- assign tagline = page.tagline | default: site.tagline_en -%}
 {%- assign feed_url = "/en/feed.xml" -%}
 {%- assign alt_url = page.alt | default: "/" -%}{%- assign alt_label = "Español" -%}
 {%- else -%}
-{%- assign home_url = "/" -%}{%- assign cv_url = "/cv/" -%}{%- assign proj_url = "/proyectos/" -%}{%- assign ev_url = "/pruebas/" -%}{%- assign blog_url = "/blog/" -%}
-{%- assign nav_home = "Inicio" -%}{%- assign nav_proj = "Proyectos" -%}{%- assign nav_ev = "Pruebas" -%}
+{%- assign home_url = "/" -%}{%- assign cv_url = "/cv/" -%}{%- assign proj_url = "/proyectos/" -%}{%- assign ev_url = "/pruebas/" -%}{%- assign blog_url = "/blog/" -%}{%- assign serv_url = "/servicios/" -%}
+{%- assign nav_home = "Inicio" -%}{%- assign nav_proj = "Proyectos" -%}{%- assign nav_ev = "Pruebas" -%}{%- assign nav_serv = "Servicios" -%}
 {%- assign tagline = page.tagline | default: site.tagline -%}
 {%- assign feed_url = "/feed.xml" -%}
 {%- assign alt_url = page.alt | default: "/en/" -%}{%- assign alt_label = "English" -%}
@@ -41,6 +41,7 @@
   </a>
   <nav>
     <a href="{{ home_url | relative_url }}"{% if page.url == home_url %} class="active"{% endif %}>{{ nav_home }}</a>
+    <a href="{{ serv_url | relative_url }}"{% if page.url == serv_url %} class="active"{% endif %}>{{ nav_serv }}</a>
     <a href="{{ cv_url | relative_url }}"{% if page.url == cv_url %} class="active"{% endif %}>CV</a>
     <a href="{{ proj_url | relative_url }}"{% if page.url == proj_url %} class="active"{% endif %}>{{ nav_proj }}</a>
     <a href="{{ ev_url | relative_url }}"{% if page.url == ev_url %} class="active"{% endif %}>{{ nav_ev }}</a>

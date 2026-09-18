@@ -7,7 +7,9 @@ alt: /en/
 description: Duvan M. González Escobar — backend Java en producción 24/7, redes y bajo nivel. Cada afirmación con su prueba.
 ---
 
-<p class="lead">Ingeniero de software. Trabajo en <b>backend Java sobre sistemas de misión crítica que no pueden caerse</b>, en redes y telecomunicaciones, y en bajo nivel con C y ensamblador.</p>
+<p class="lead">Ingeniero de software. Monto la observabilidad de un sistema en aproximadamente una semana — métricas, logs, paneles y alertas que avisan de verdad — y vengo de dos años manteniendo en pie la red de operadores de telecomunicaciones en producción 24/7.</p>
+
+<p>Escribo y despliego en tres frentes: <b>redes y transporte</b> (SNMP, MPLS, SDH), <b>plataforma y operación</b> (Kubernetes, CI/CD, observabilidad) y <b>backend</b> (Java con Spring Boot, Kafka, PostgreSQL). En <a href="{{ '/servicios/' | relative_url }}">Servicios</a> está lo que hago por proyecto y lo que cuesta.</p>
 
 <p>Mi experiencia profesional viene de NMS comerciales de operadores de telecomunicaciones: servicios core en Java y C++, rendimiento medido y guardias de producción. No voy a contarte adjetivos — <a href="{{ '/pruebas/' | relative_url }}">cada cosa que afirmo aquí tiene su prueba</a>, y la que no pueda enseñarte te la digo.</p>
 
@@ -33,4 +35,4 @@ description: Duvan M. González Escobar — backend Java en producción 24/7, re
 
 <p>En <a href="{{ '/pruebas/' | relative_url }}">Pruebas</a> cada afirmación aparece con la evidencia que la sostiene: repositorios públicos cuando puedo abrirlos, informes y números medidos cuando el código es privado, y acceso directo al repositorio privado bajo petición. Si algo no puedo demostrar, no lo escribo.</p>
 
-<p class="muted">Disponible para trabajar en remoto o híbrido en Bilbao (o donde haga falta). El correo y el GitHub están justo debajo.</p>
+<p class="muted">Trabajo por proyecto (observabilidad, plataforma y red) y también escucho ofertas en nómina: el CV está a un clic. Escríbeme a <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
