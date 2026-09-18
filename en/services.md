@@ -42,6 +42,18 @@ description: End-to-end observability installed on your stack in about a week �
 
 <p>You enter at the first level and move up when you need to. Payment is 50% on signature and 50% on delivery; the monthly maintenance has a three-month minimum, because thresholds get tuned with time and with data.</p>
 
+<h2>What else I do</h2>
+
+<p>Observability is the way in, because it is what gets asked for most. These are the other three, and they run through the same process and the same terms:</p>
+
+<ul>
+  <li><b>Platform and Kubernetes.</b> A genuinely reproducible cluster — infrastructure as code, GitOps, network closed by default, identity, secrets, image registry — plus a test environment that comes up the same way production does. Priced by scope: two to six weeks. I don't touch your applications' code.</li>
+  <li><b>On-call and maintenance.</b> If the system is already up and nobody watches it at weekends: <b>€1,500–2,000/month</b> in production, <b>€2,500–4,000/month</b> with a written SLA and response times. Three-month minimum, because thresholds get tuned with data.</li>
+  <li><b>Backend in Go or Java, by sprint.</b> One vertical with a delivery date: API, persistence, tests and deployment, with the numbers of what it holds. Fixed price before starting.</li>
+</ul>
+
+<p>And if your world is <b>industry or energy</b> (SCADA, IEC 104, IEC 61850, NIS2), the way in starts with an assessment measured on your own equipment: the gaps in writing, ordered by risk, and a phased plan. Quoted separately.</p>
+
 <h2>How the week goes</h2>
 
 <ul>

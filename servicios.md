@@ -41,6 +41,18 @@ description: Montaje de observabilidad end-to-end en tu stack en aproximadamente
 
 <p>Se entra por el primer nivel y se sube cuando hace falta. El pago es 50% a la firma y 50% a la entrega; el mantenimiento mensual tiene un mínimo de tres meses porque las alertas se afinan con el tiempo y con datos.</p>
 
+<h2>Lo que también hago</h2>
+
+<p>La observabilidad es por donde se entra, porque es lo que más se pide. Estas son las otras tres, y van por el mismo proceso y las mismas condiciones:</p>
+
+<ul>
+  <li><b>Plataforma y Kubernetes.</b> Clúster reproducible de verdad —con la infraestructura como código, GitOps, red cerrada por defecto, identidad, secretos y registro de imágenes— y un entorno de pruebas que se levanta igual que producción. Presupuesto según alcance: de dos a seis semanas. No toco el código de tus aplicaciones.</li>
+  <li><b>Guardia y mantenimiento.</b> Si ya tienes el sistema montado y no hay nadie que lo mire los fines de semana: <b>1.500–2.000 €/mes</b> en producción, <b>2.500–4.000 €/mes</b> con SLA y tiempos de respuesta escritos. Mínimo tres meses, porque los umbrales se afinan con datos.</li>
+  <li><b>Backend Go o Java, por sprint.</b> Un vertical concreto con fecha de entrega: API, persistencia, pruebas y despliegue, con las cifras de lo que aguanta. Presupuesto cerrado antes de empezar.</li>
+</ul>
+
+<p>Y si tu mundo es la <b>industria o la energía</b> (SCADA, IEC 104, IEC 61850, NIS2), el camino empieza por un assessment medido sobre tus equipos: los huecos por escrito en orden de riesgo y un plan por fases. Se presupuesta aparte.</p>
+
 <h2>Cómo es la semana</h2>
 
 <ul>
