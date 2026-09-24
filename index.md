@@ -4,35 +4,37 @@ lang: es
 title: Inicio
 permalink: /
 alt: /en/
-description: Duvan M. González Escobar — backend Java en producción 24/7, redes y bajo nivel. Cada afirmación con su prueba.
+description: Duvan M. González Escobar — ingeniero de software. Backend Java y C++ en producción 24/7, redes (SNMP, MPLS) y bajo nivel. Todo con su prueba.
 ---
 
-<p class="lead">Ingeniero de software. Monto la observabilidad de un sistema en aproximadamente una semana — métricas, logs, paneles y alertas que avisan de verdad — y vengo de dos años manteniendo en pie la red de operadores de telecomunicaciones en producción 24/7.</p>
+<p class="lead">Ingeniero de software. Dos años manteniendo en producción el sistema de gestión de red de operadores de telecomunicaciones: Java y C++ en servicios core, SNMP y MPLS sobre la red, incidencias a cualquier hora.</p>
 
-<p>Escribo y despliego en tres frentes: <b>redes y transporte</b> (SNMP, MPLS, SDH), <b>plataforma y operación</b> (Kubernetes, CI/CD, observabilidad) y <b>backend</b> (Java con Spring Boot, Kafka, PostgreSQL). En <a href="{{ '/servicios/' | relative_url }}">Servicios</a> está lo que hago por proyecto y lo que cuesta.</p>
-
-<p>Mi experiencia profesional viene de NMS comerciales de operadores de telecomunicaciones: servicios core en Java y C++, rendimiento medido y guardias de producción. No voy a contarte adjetivos — <a href="{{ '/pruebas/' | relative_url }}">cada cosa que afirmo aquí tiene su prueba</a>, y la que no pueda enseñarte te la digo.</p>
+<p>Busco trabajo en <b>backend Java</b> o <b>redes/plataforma</b>, en Santander o remoto. Lo que afirmo de mí, está medido: <a href="{{ '/pruebas/' | relative_url }}">cada afirmación lleva su prueba</a> en esta web.</p>
 
 <div class="cards">
   <div class="card">
-    <h3>Backend Java en producción 24/7</h3>
+    <h3>Backend en producción 24/7</h3>
     <p>Java (Spring Boot) y C++ sobre Linux: servicios core, APIs REST, Kafka, PostgreSQL, Maven, Tomcat.</p>
     <a href="{{ '/cv/' | relative_url }}">Ver CV →</a>
   </div>
   <div class="card">
     <h3>Redes y telecomunicaciones</h3>
-    <p>SNMP v1/v2/v3 (USM), MPLS y SDH. Laboratorio propio de 18 nodos con NMS en vivo.</p>
+    <p>SNMP v1/v2/v3 (USM) con driver propio, MPLS, SDH. Laboratorio abierto de 18 nodos con NMS en vivo.</p>
     <a href="{{ '/pruebas/#snmp' | relative_url }}">Ver prueba →</a>
   </div>
   <div class="card">
     <h3>Bajo nivel: C, asm y ELF</h3>
-    <p>Packer ELF64 en C y x86-64 con cifrado ChaCha20. Verificación con gdb, objdump y strace.</p>
+    <p>Packer ELF64 en C y x86-64 con ChaCha20, verificado con gdb, objdump y strace. libc en ensamblador.</p>
     <a href="{{ '/pruebas/#elf' | relative_url }}">Ver prueba →</a>
   </div>
 </div>
 
-<h2>Cómo se demuestra</h2>
+<h2>En números</h2>
 
-<p>En <a href="{{ '/pruebas/' | relative_url }}">Pruebas</a> cada afirmación aparece con la evidencia que la sostiene: repositorios públicos cuando puedo abrirlos, informes y números medidos cuando el código es privado, y acceso directo al repositorio privado bajo petición. Si algo no puedo demostrar, no lo escribo.</p>
+<ul>
+  <li><b>25 meses</b> de producción 24/7 en NMS de operadores (CIC Consulting, mar 2024 – abr 2026).</li>
+  <li><b>120.000 polls SNMP, 0 fallos</b>, a ~38.300 req/s.</li>
+  <li><b>237 comprobaciones, 0 fallos</b> en laboratorio de 18 nodos OSPF + MPLS/LDP, con capturas publicadas.</li>
+</ul>
 
-<p class="muted">Trabajo por proyecto (observabilidad, plataforma y red) y también escucho ofertas en nómina: el CV está a un clic. Escríbeme a <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+<p class="muted">Escríbeme: <a href="mailto:{{ site.email }}">{{ site.email }}</a> · <a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a></p>

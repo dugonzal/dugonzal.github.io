@@ -5,35 +5,37 @@ title: Home
 permalink: /en/
 alt: /
 tagline: Software engineer — Java backend in 24/7 production, networks and low level
-description: Duvan M. González Escobar — Java backend in 24/7 production, networks and low level. Every claim backed by its evidence.
+description: Duvan M. González Escobar — software engineer. Java and C++ backend in 24/7 production, networks (SNMP, MPLS) and low level. Every claim backed by its evidence.
 ---
 
-<p class="lead">Software engineer. I install a system's observability in about a week — metrics, logs, dashboards and alerts that actually page someone — and I come from two years of keeping telecom operators' networks alive in 24/7 production.</p>
+<p class="lead">Software engineer. Two years keeping telecom operators' network management systems running in production: Java and C++ core services, SNMP and MPLS over the network, incidents at any hour.</p>
 
-<p>I write and deploy across three fronts: <b>networks and transport</b> (SNMP, MPLS, SDH), <b>platform and operations</b> (Kubernetes, CI/CD, observability) and <b>backend</b> (Java with Spring Boot, Kafka, PostgreSQL). <a href="{{ '/en/services/' | relative_url }}">Services</a> has what I do by project and what it costs.</p>
-
-<p>My professional experience comes from commercial NMS platforms used by telecom operators: core services in Java and C++, measured performance and production on-call. I am not going to sell you adjectives — <a href="{{ '/en/pruebas/' | relative_url }}">every claim on this site carries its evidence</a>, and if I cannot show you something, I say so.</p>
+<p>Looking for work in <b>Java backend</b> or <b>networks/platform</b>, in Santander or remote. Everything I claim about myself is measured: <a href="{{ '/en/pruebas/' | relative_url }}">every statement carries its evidence</a> on this site.</p>
 
 <div class="cards">
   <div class="card">
-    <h3>Java backend in 24/7 production</h3>
+    <h3>Backend in 24/7 production</h3>
     <p>Java (Spring Boot) and C++ on Linux: core services, REST APIs, Kafka, PostgreSQL, Maven, Tomcat.</p>
     <a href="{{ '/en/cv/' | relative_url }}">See CV →</a>
   </div>
   <div class="card">
-    <h3>Networks and telecommunications</h3>
-    <p>SNMP v1/v2/v3 (USM), MPLS and SDH. My own 18-node lab with a live NMS.</p>
+    <h3>Networks and telecom</h3>
+    <p>SNMP v1/v2/v3 (USM) with my own driver, MPLS, SDH. Open 18-node lab with a live NMS.</p>
     <a href="{{ '/en/pruebas/#snmp' | relative_url }}">See evidence →</a>
   </div>
   <div class="card">
     <h3>Low level: C, asm and ELF</h3>
-    <p>ELF64 packer in C and x86-64 with ChaCha20 encryption. Verified with gdb, objdump and strace.</p>
+    <p>ELF64 packer in C and x86-64 with ChaCha20, verified with gdb, objdump and strace. libc in assembly.</p>
     <a href="{{ '/en/pruebas/#elf' | relative_url }}">See evidence →</a>
   </div>
 </div>
 
-<h2>How I prove it</h2>
+<h2>In numbers</h2>
 
-<p>On the <a href="{{ '/en/pruebas/' | relative_url }}">Evidence</a> page every claim comes with what backs it: public repositories when I can open them, reports and measured numbers when the code is private, and direct access to the private repositories on request. If I cannot prove it, I do not write it.</p>
+<ul>
+  <li><b>25 months</b> in 24/7 production on operator NMS platforms (CIC Consulting, Mar 2024 – Apr 2026).</li>
+  <li><b>120,000 SNMP polls, 0 failures</b>, at ~38,300 req/s.</li>
+  <li><b>237 checks, 0 failures</b> on an 18-node OSPF + MPLS/LDP lab, with published captures.</li>
+</ul>
 
-<p class="muted">I work by project (observability, platform and networks) and I also listen to salaried offers: the CV is one click away. Write to me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+<p class="muted">Write me: <a href="mailto:{{ site.email }}">{{ site.email }}</a> · <a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a></p>

@@ -13,7 +13,7 @@ description: CV of Duvan M. González Escobar — networks and transport (SNMP, 
 
 <h2>Profile</h2>
 
-<p>Two years keeping the network management system of telecom operators running in production: per-device <b>SNMP v1/v2/v3 polling</b>, <b>MPLS rings</b> and carrier circuits, remote <b>SSH</b> operations on network equipment, and thousands of events per minute arriving as traps. The core services behind that are <b>Java (Spring Boot)</b> and <b>C++</b>, with <b>Kafka</b> and <b>PostgreSQL</b> underneath. I cover all five <b>FCAPS</b> areas —fault, configuration, accounting, performance and security— with my own drivers that model any device over <b>SNMP v1/v2/v3</b>, and I act on the equipment, not just read it: <b>SET</b> operations, SSH configuration with drift detection and rollback. Multivendor cybersecurity aligned with <b>NIST</b> (CVEs, CPEs, CWEs) on the <b>VULCANO</b> project (INCIBE/NextGenerationEU). Everything I claim here I back with code and with measurements.</p>
+<p>Two years in 24/7 production with telecom operators' NMS: <b>Java (Spring Boot)</b> and <b>C++</b> core services, <b>Kafka</b> and <b>PostgreSQL</b> underneath. <b>SNMP v1/v2/v3</b> with my own drivers that model any device, <b>MPLS rings</b> and carrier circuits, operations on the equipment (<b>SET</b>, SSH with drift detection and rollback) across all five <b>FCAPS</b> areas. Multivendor cybersecurity aligned with <b>NIST</b> (CVEs, CPEs, CWEs) on <b>VULCANO</b> (INCIBE/NextGenerationEU).</p>
 
 <h2>Experience</h2>
 

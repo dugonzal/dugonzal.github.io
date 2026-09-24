@@ -12,7 +12,7 @@ description: CV de Duvan M. González Escobar — redes y transporte (SNMP, MPLS
 
 <h2>Perfil</h2>
 
-<p>Dos años manteniendo en producción el sistema de gestión de la red de operadores de telecomunicaciones: <b>polling SNMP v1/v2/v3</b> por dispositivo, <b>anillos MPLS</b> y circuitos de operador, operaciones remotas por <b>SSH</b> sobre equipos de red, y miles de eventos por minuto entrando por traps. Los servicios core que sostienen eso son <b>Java (Spring Boot)</b> y <b>C++</b>, con <b>Kafka</b> y <b>PostgreSQL</b> detrás. Cubro las cinco áreas de <b>FCAPS</b> —fallos, configuración, contabilidad, rendimiento y seguridad— con drivers propios que modelan cualquier dispositivo por <b>SNMP v1/v2/v3</b>, y actúo sobre los equipos, no solo los leo: operaciones <b>SET</b>, configuración por SSH con detección de deriva y reversión. Ciberseguridad multivendor alineada con <b>NIST</b> (CVEs, CPEs, CWEs) en el proyecto <b>VULCANO</b> (INCIBE/NextGenerationEU). Todo lo que afirmo aquí lo demuestro con código y con medidas.</p>
+<p>Dos años en producción 24/7 con el NMS de operadores de telecomunicaciones: <b>Java (Spring Boot)</b> y <b>C++</b> en los servicios core, <b>Kafka</b> y <b>PostgreSQL</b> detrás. <b>SNMP v1/v2/v3</b> con drivers propios que modelan cualquier dispositivo, <b>anillos MPLS</b> y circuitos de operador, operaciones sobre los equipos (<b>SET</b>, SSH con detección de deriva y reversión) y las cinco áreas de <b>FCAPS</b>. Ciberseguridad multivendor alineada con <b>NIST</b> (CVEs/CPEs/CWEs) en <b>VULCANO</b> (INCIBE/NextGenerationEU).</p>
 
 <h2>Experiencia</h2>
 
