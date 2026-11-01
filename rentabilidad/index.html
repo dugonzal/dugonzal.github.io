@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rentabilidad real — qué te queda de cada venta</title>
+<style>
+  :root{
+    --tinta:#11151a; --gris:#5f6a76; --linea:#e2e7ec; --fondo:#f7f9fb; --blanco:#fff;
+    --verde:#0b6b52; --rojo:#b3261e; --ambar:#8a5a00; --ambar-suave:#fff4d6; --rojo-suave:#fdeceb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fondo);color:var(--tinta);
+       font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .hoja{max-width:960px;margin:0 auto;padding:40px 20px 80px}
+  header{border-bottom:2px solid var(--tinta);padding-bottom:18px;margin-bottom:28px}
+  h1{font-size:27px;margin:0 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--gris);margin:0}
+  .sello{display:inline-block;margin-top:10px;font-size:13px;color:var(--verde);
+         border:1px solid #cfe6de;background:#f1faf6;padding:3px 9px;border-radius:99px}
+  section{background:var(--blanco);border:1px solid var(--linea);border-radius:10px;
+          padding:20px;margin-bottom:18px}
+  h2{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--gris);
+     margin:0 0 14px;font-weight:700}
+  .drop{border:2px dashed #c7d2dc;border-radius:10px;padding:34px 20px;text-align:center;
+        color:var(--gris);cursor:pointer;transition:.15s}
+  .drop:hover,.drop.aqui{border-color:var(--verde);background:#f6fbf9;color:var(--tinta)}
+  .drop strong{display:block;color:var(--tinta);font-size:17px;margin-bottom:4px}
+  .fila{display:flex;gap:14px;flex-wrap:wrap}
+  .campo{flex:1 1 170px}
+  label{display:block;font-size:13px;color:var(--gris);margin-bottom:5px}
+  input[type=number],input[type=date],input[type=text]{width:100%;padding:9px 10px;border:1px solid #cfd8e0;
+        border-radius:7px;font-size:15px;font-variant-numeric:tabular-nums;background:#fff;color:var(--tinta)}
+  input:focus{outline:2px solid #bfe3d7;border-color:var(--verde)}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--linea);vertical-align:middle}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gris);font-weight:700}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .aviso{font-size:12px;font-weight:700;padding:2px 7px;border-radius:99px;white-space:nowrap}
+  .a-rojo{background:var(--rojo-suave);color:var(--rojo)}
+  .a-ambar{background:var(--ambar-suave);color:var(--ambar)}
+  .a-ok{color:var(--gris);font-weight:400}
+  tr.perdida td{background:#fffafa}
+  .total td{font-weight:700;border-top:2px solid var(--tinta);border-bottom:none;padding-top:12px}
+  .btn{display:inline-block;background:var(--verde);color:#fff;border:0;border-radius:8px;
+       padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer;margin:6px 8px 0 0}
+  .btn.sec{background:#fff;color:var(--tinta);border:1px solid #cfd8e0}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .mini{padding:6px 9px;font-size:12px;border-radius:6px}
+  .nota{font-size:13px;color:var(--gris);margin:10px 0 0}
+  .oculto{display:none}
+  .error{color:var(--rojo);background:var(--rojo-suave);padding:10px 12px;border-radius:8px;font-size:14px}
+  .kpi{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:14px}
+  .kpi div{flex:1 1 140px}
+  .kpi .v{font-size:23px;font-weight:700;font-variant-numeric:tabular-nums}
+  .kpi .k{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--gris)}
+  td input{padding:6px 8px;font-size:14px}
+  td input.coste{width:90px}
+  td input.fecha{width:135px}
+  .add{background:none;border:0;color:var(--verde);font-size:12px;cursor:pointer;padding:0;text-decoration:underline}
+  @media print{body{background:#fff}section{border:0;padding:0}.btn,.drop{display:none}}
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header>
+    <h1>Rentabilidad real</h1>
+    <p class="sub">Qué te queda de cada venta después del coste, el envío, la comisión y las devoluciones.</p>
+    <span class="sello">Tus datos no salen de tu navegador: no se sube nada a ningún sitio</span>
+  </header>
+
+  <section id="paso1">
+    <h2>1 · Tus pedidos</h2>
+    <div class="drop" id="drop">
+      <strong>Suelta aquí el CSV de pedidos de Shopify</strong>
+      o pulsa para elegirlo. En Shopify: Pedidos → Exportar → «Todos los pedidos».
+      <input type="file" id="fichero" accept=".csv,text/csv" class="oculto">
+    </div>
+    <button class="btn sec mini" id="verEjemplo" style="margin-top:12px">Ver un ejemplo con datos inventados</button>
+    <p class="nota" id="resumen"></p>
+    <div id="error" class="error oculto"></div>
+  </section>
+
+  <section id="paso2" class="oculto">
+    <h2>2 · Lo que te cuesta vender</h2>
+    <div class="fila">
+      <div class="campo"><label>Comisión de la pasarela (%)</label>
+        <input type="number" id="comPct" value="1.9" step="0.1" min="0"></div>
+      <div class="campo"><label>Comisión fija por pedido (€)</label>
+        <input type="number" id="comFija" value="0.25" step="0.05" min="0"></div>
+      <div class="campo"><label>Lo que te cuesta enviar cada pedido (€)</label>
+        <input type="number" id="envio" value="4.50" step="0.10" min="0"></div>
+    </div>
+    <p class="nota">Shopify no guarda lo que te cuesta enviar: solo lo que paga el cliente. Si no lo sabes, pon 0 y el
+      beneficio saldrá más alto de lo real — mejor mirarlo una vez.</p>
+  </section>
+
+  <section id="paso3" class="oculto">
+    <h2>3 · Lo que te cuesta cada producto</h2>
+    <p class="nota" style="margin-top:-6px;margin-bottom:12px">
+      Esto es lo que ninguna app sabe por ti. Si tu proveedor cambió el precio, añade el cambio con su fecha:
+      el margen de los pedidos antiguos se calcula con el coste de entonces, no con el de hoy.</p>
+    <table>
+      <thead><tr><th>Producto</th><th>Coste (€)</th><th>Vale desde</th><th></th></tr></thead>
+      <tbody id="costes"></tbody>
+    </table>
+  </section>
+
+  <section id="paso4" class="oculto">
+    <h2>4 · El resultado</h2>
+    <div class="kpi">
+      <div><div class="k">Facturado</div><div class="v" id="kFacturado">—</div></div>
+      <div><div class="k">Beneficio real</div><div class="v" id="kBeneficio">—</div></div>
+      <div><div class="k">Margen</div><div class="v" id="kMargen">—</div></div>
+      <div><div class="k">Productos que pierden</div><div class="v" id="kPierden">—</div></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th>Producto</th><th class="num">Uds</th><th class="num">Facturado</th>
+        <th class="num">Devol.</th><th class="num">Beneficio</th><th class="num">Margen</th><th>Aviso</th>
+      </tr></thead>
+      <tbody id="informe"></tbody>
+    </table>
+    <div id="btnSalida" class="oculto">
+      <button class="btn" id="descargarCostes">Descargar mis costes</button>
+      <button class="btn sec" id="descargarPedidos">Descargar pedidos normalizados</button>
+      <button class="btn sec" id="imprimir">Imprimir / PDF</button>
+    </div>
+  </section>
+
+  <p class="nota" id="pie"></p>
+</div>
+
+<script src="nucleo.js"></script>
+<script>
+(function(){
+  "use strict";
+  var estado = { lineas: [], skus: [], costes: [], avisos: [] };
+  var $ = function(id){ return document.getElementById(id); };
+
+  // Datos inventados para enseñar el producto sin pedirle nada a nadie.
+  var DEMO = "Name,Financial Status,Currency,Subtotal,Shipping,Total,Created at,Lineitem name,Lineitem price,Lineitem sku,Lineitem quantity,Refunded Amount,Cancelled at\n"
+   + "#3001,paid,EUR,29.90,4.95,34.85,2026-02-11 09:00:00,Camiseta negra,29.90,CAM-N,1,0,\n"
+   + "#3002,paid,EUR,49.90,0,49.90,2026-02-19 12:10:00,Sudadera,49.90,SUD,1,0,\n"
+   + "#3003,paid,EUR,79.80,4.95,84.75,2026-03-04 18:30:00,Camiseta negra,29.90,CAM-N,1,0,\n"
+   + "#3003,paid,EUR,79.80,4.95,84.75,2026-03-04 18:30:00,Sudadera,49.90,SUD,1,0,\n"
+   + "#3004,paid,EUR,19.90,4.95,24.85,2026-03-22 08:05:00,Gorra,19.90,GOR,1,0,\n"
+   + "#3005,paid,EUR,19.90,4.95,24.85,2026-07-09 17:40:00,Gorra,19.90,GOR,1,0,\n"
+   + "#3006,refunded,EUR,29.90,4.95,34.85,2026-08-02 11:20:00,Camiseta negra,29.90,CAM-N,1,34.85,\n"
+   + "#3007,paid,EUR,9.90,4.95,14.85,2026-09-15 16:00:00,Bolsa tela,9.90,BOL,1,0,\n";
+
+  // Los costes del ejemplo incluyen el cambio de precio de la gorra en junio.
+  var COSTES_DEMO = {"CAM-N":[["9.50","2026-01-01"]], "SUD":[["18.00","2026-01-01"]],
+                     "GOR":[["5.00","2026-01-01"],["9.00","2026-06-01"]], "BOL":[["2.10","2026-01-01"]]};
+
+  function eur(n){ return (n<0?"-":"") + Math.abs(n).toLocaleString("es-ES",{minimumFractionDigits:2,maximumFractionDigits:2}) + " €"; }
+  function pct(n){ return n.toLocaleString("es-ES",{minimumFractionDigits:1,maximumFractionDigits:1}) + " %"; }
+
+  function cargarTexto(texto){
+    var r = Nucleo.leerExport(texto, 0);
+    if(r.error){ return fallo(r.error); }
+    if(!r.lineas.length){ return fallo("No he encontrado líneas de pedido legibles en ese fichero."); }
+    estado.lineas = r.lineas;
+    estado.avisos = r.avisos || [];
+    estado.skus = [...new Set(r.lineas.map(function(l){return l.sku;}))].sort();
+    var devueltas = r.lineas.filter(function(l){ return l.devuelto; }).length;
+    estado.costes = [];
+    estado.skus.forEach(function(s){
+      var d = COSTES_DEMO[s];
+      if(d){ d.forEach(function(t){ estado.costes.push({sku:s, coste:t[0], desde:t[1]}); }); }
+      else { estado.costes.push({sku:s, coste:"", desde:"2026-01-01"}); }
+    });
+    $("error").classList.add("oculto");
+    $("resumen").textContent = r.pedidos + " pedidos · " + r.lineas.length + " líneas ("
+      + devueltas + " devuelta" + (devueltas === 1 ? "" : "s") + ") · "
+      + estado.skus.length + " productos" + (estado.avisos.length ? " · " + estado.avisos.length + " avisos" : "");
+    $("paso2").classList.remove("oculto"); $("paso3").classList.remove("oculto");
+    pintarCostes(); calcular();
+  }
+
+  function cargarFichero(f){
+    if(!f) return;
+    var lector = new FileReader();
+    lector.onload = function(){
+      try { cargarTexto(String(lector.result)); }
+      catch(e){ fallo("No he podido leer el fichero: " + e.message); }
+    };
+    lector.readAsText(f, "utf-8");
+  }
+
+  function fallo(msg){ var e=$("error"); e.textContent=msg; e.classList.remove("oculto"); }
+
+  function pintarCostes(){
+    var tb = $("costes"); tb.innerHTML = "";
+    estado.costes.forEach(function(c, i){
+      var esUltimoDelSku = !estado.costes.slice(i + 1).some(function(o){ return o.sku === c.sku; });
+      var tr = document.createElement("tr");
+      tr.innerHTML = '<td>' + esc(c.sku) + '</td>'
+        + '<td><input class="coste" type="number" step="0.01" min="0" placeholder="?" value="' + (c.coste===""?"":c.coste) + '"></td>'
+        + '<td><input class="fecha" type="date" value="' + c.desde + '"></td>'
+        + '<td>' + (esUltimoDelSku ? '<button class="add" data-add="' + esc(c.sku) + '">+ cambio de precio</button>' : '') + '</td>';
+      tr.querySelector(".coste").addEventListener("input", function(ev){ c.coste = ev.target.value; calcular(); });
+      tr.querySelector(".fecha").addEventListener("input", function(ev){ c.desde = ev.target.value || "2026-01-01"; calcular(); });
+      var b = tr.querySelector("[data-add]");
+      if(b) b.addEventListener("click", function(){ anadirTramo(c.sku); });
+      tb.appendChild(tr);
+    });
+  }
+
+  function anadirTramo(sku){
+    var hoy = new Date().toISOString().slice(0,10);
+    estado.costes.push({sku:sku, coste:"", desde:hoy});
+    pintarCostes(); calcular();
+  }
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]; }); }
+
+  function calcular(){
+    var pctC = parseFloat($("comPct").value) || 0;
+    var fija = parseFloat($("comFija").value) || 0;
+    var envio = parseFloat($("envio").value) || 0;
+
+    // el envío pagado se reparte igual que el cobrado: se recalcula por pedido
+    var porPedido = {};
+    estado.lineas.forEach(function(l){
+      var k = l.pedido;
+      porPedido[k] = (porPedido[k] || 0) + l.unidades * l.precio + l.envioCobrado;
+    });
+    var lineas = estado.lineas.map(function(l){
+      var totalPedido = porPedido[l.pedido] || 1;
+      var parte = (l.unidades * l.precio + l.envioCobrado) / totalPedido;
+      return Object.assign({}, l, {envioPagado: +(envio * parte).toFixed(4)});
+    });
+
+    var tramos = estado.costes.filter(function(c){ return c.coste !== ""; })
+                              .map(function(c){ return {sku:c.sku, coste:parseFloat(c.coste), desde:c.desde}; });
+    var res = Nucleo.calcular(lineas, tramos, pctC, fija);
+
+    var tb = $("informe"); tb.innerHTML = "";
+    var facturado = 0, beneficio = 0, pierden = 0;
+    res.forEach(function(r){
+      facturado += r.ingresos; beneficio += r.beneficio; if(r.beneficio < 0) pierden++;
+      var avisos = [];
+      if(r.beneficio < 0) avisos.push(["a-rojo","PIERDE DINERO"]);
+      else if(r.margen < 15) avisos.push(["a-ambar","margen bajo"]);
+      if(r.sinCoste) avisos.push(["a-ambar","SIN COSTE"]);
+      else if(r.sinCosteFechado) avisos.push(["a-ambar","coste sin fecha"]);
+
+      var tr = document.createElement("tr");
+      if(r.beneficio < 0) tr.className = "perdida";
+      tr.innerHTML = '<td>' + esc(r.sku) + '</td>'
+        + '<td class="num">' + r.unidades + '</td>'
+        + '<td class="num">' + eur(r.ingresos) + '</td>'
+        + '<td class="num">' + (r.devoluciones > 0 ? "−" + eur(r.devoluciones).replace("-","") : "—") + '</td>'
+        + '<td class="num">' + eur(r.beneficio) + '</td>'
+        + '<td class="num">' + pct(r.margen) + '</td>'
+        + '<td>' + (avisos.length ? avisos.map(function(a){ return '<span class="aviso '+a[0]+'">'+a[1]+'</span>'; }).join(" ") : '<span class="a-ok">—</span>') + '</td>';
+      tb.appendChild(tr);
+    });
+
+    $("kFacturado").textContent = eur(facturado);
+    $("kBeneficio").textContent = eur(beneficio);
+    $("kMargen").textContent = facturado ? pct(beneficio/facturado*100) : "—";
+    $("kPierden").textContent = pierden;
+
+    $("paso4").classList.remove("oculto");
+    $("btnSalida").classList.remove("oculto");
+
+    var sinCoste = res.filter(function(r){ return r.sinCoste; }).length;
+    $("pie").textContent = sinCoste
+      ? "Faltan " + sinCoste + " productos por coste: su margen no se puede creer todavía."
+      : "Todos los productos tienen coste. Este informe se puede defender línea a línea.";
+  }
+
+  function descargar(nombre, texto){
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["\ufeff"+texto], {type:"text/csv;charset=utf-8"}));
+    a.download = nombre; a.click(); URL.revokeObjectURL(a.href);
+  }
+
+  $("drop").addEventListener("click", function(){ $("fichero").click(); });
+  $("verEjemplo").addEventListener("click", function(){ cargarTexto(DEMO); });
+  if (location.search.indexOf("demo=1") >= 0) { cargarTexto(DEMO); }
+  $("fichero").addEventListener("change", function(e){ cargarFichero(e.target.files[0]); });
+  ["dragover","dragenter"].forEach(function(ev){
+    $("drop").addEventListener(ev, function(e){ e.preventDefault(); $("drop").classList.add("aqui"); });
+  });
+  ["dragleave","drop"].forEach(function(ev){
+    $("drop").addEventListener(ev, function(e){ e.preventDefault(); $("drop").classList.remove("aqui"); });
+  });
+  $("drop").addEventListener("drop", function(e){ cargarFichero(e.dataTransfer.files[0]); });
+  ["comPct","comFija","envio"].forEach(function(id){ $(id).addEventListener("input", calcular); });
+
+  $("descargarCostes").addEventListener("click", function(){
+    var t = "sku,coste,desde,fuente\n" + estado.costes.map(function(c){
+      return [c.sku, c.coste, c.desde, ""].join(",");
+    }).join("\n");
+    descargar("costes.csv", t);
+  });
+  $("descargarPedidos").addEventListener("click", function(){
+    var cab = "fecha,pedido,sku,unidades,precio_unitario,coste_unitario,envio_cobrado,envio_pagado,comision_pct,comision_fija,devuelto";
+    var pctC = parseFloat($("comPct").value)||0, fija = parseFloat($("comFija").value)||0;
+    var t = cab + "\n" + estado.lineas.map(function(l){
+      return [l.fecha||"", l.pedido, l.sku, l.unidades, l.precio.toFixed(2), "0.00",
+              l.envioCobrado.toFixed(2), "0.00", pctC, fija, l.devuelto?"1":"0"].join(",");
+    }).join("\n");
+    descargar("pedidos_normalizados.csv", t);
+  });
+  $("imprimir").addEventListener("click", function(){ window.print(); });
+})();
+</script>
+</body>
+</html>
